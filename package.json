@@ -19,6 +19,7 @@
   },
   "homepage": "https://github.com/future4code/julian-labook6#readme",
   "dependencies": {
+    "@types/bcrypt": "^3.0.0",
     "@types/bcryptjs": "^2.4.2",
     "@types/express": "^4.17.0",
     "@types/jsonwebtoken": "^8.5.0",
