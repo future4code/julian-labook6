@@ -3,36 +3,41 @@ import { BaseDatabase } from "./BaseDatabase";
 
 
 export class CreatePostDatabase extends BaseDatabase {
+    CreatePostsDatabase(arg0: string, CreatePostsDatabase: any) {
+        throw new Error("Method not implemented.");
+    }
     tableName!: string;
+    
     private static TABLE_NAME = "Posts";
 
     public async createPosts(
+      id: string,  
       photo: string,
       description: string,
       creation_date: string,
-      tipo: string,
+      type: string,
+      creator_user_id: string
           
     ): Promise<void> {
       await this.getConnection()
       .insert({
+        id,
         photo,
         description,
         creation_date,
-        tipo,
+        type,
+        creator_user_id
         
       })
       .into(CreatePostDatabase.TABLE_NAME);
-
-      BaseDatabase.destroyConnection()
+      
     }
 
-    public async getRecipeById(id: string): Promise<any> {
+    public async getPostById(id: string): Promise<any> {
       const result = await this.getConnection()
         .select("*")
         .from(CreatePostDatabase.TABLE_NAME)
         .where({ id });
-
-        BaseDatabase.destroyConnection()
 
         return result[0];
     }  
