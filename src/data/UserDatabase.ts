@@ -1,5 +1,5 @@
 import { BaseDatabase } from "./BaseDatabase";
 
 export class UserDatabase extends BaseDatabase {
-  tableName: string = "";
+  tableName: string = "UsersLabook6";
 }
