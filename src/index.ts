@@ -1,4 +1,3 @@
-import { userRouter } from "./router/UserRouter";
 import { friendRouter } from "./router/FriendRouter";
 import dotenv from "dotenv";
 import express from "express";

@@ -9,4 +9,11 @@ export class FriendBusiness {
   ): Promise<any> {
     await this.friendDatabase.makeFriend(user_id, user_to_add_id);
   }
+
+  public async undoFriendship(
+    user_id: string,
+    user_to_del_id: string
+  ): Promise<any> {
+    await this.friendDatabase.undoFriendship(user_id, user_to_del_id);
+  }
 }
