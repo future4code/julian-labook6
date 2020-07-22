@@ -5,7 +5,7 @@ export abstract class BaseDatabase {
   static destroyConnection() {
       throw new Error("Method not implemented.");
   }
-  abstract tableName: string;
+  
   private static connection: Knex;
 
   public getConnection(): Knex {

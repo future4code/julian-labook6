@@ -1,8 +1,9 @@
 import {CreatePostDatabase } from "../data/CreatePostsDatabase";
 import express from "express";
+import { create } from "../controller/PostController";
 
 export const PostRouter = express.Router();
 
-PostRouter.post("/create", new CreatePostDatabase().CreatePostsDatabase);
+PostRouter.post("/create", create);
 
 

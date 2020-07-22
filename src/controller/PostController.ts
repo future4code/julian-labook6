@@ -2,21 +2,17 @@ import express, { Request, Response } from "express";
 import { IdGenerator } from "../services/IdGenerator";
 import { Authenticator } from "../services/Authenticator";
 import { CreatePostDatabase } from "../data/CreatePostsDatabase";
-import {BaseDatabase} from "../data/BaseDatabase";
 import moment from "moment";
 
-
-export const PostRouter = express.Router();
-
-PostRouter.post("/create", async (req: Request, res: Response) => {
+export const create = async (req: Request, res: Response) => {
     try {
   
       const authenticator = new Authenticator();
       const tokenData = authenticator.getData(req.headers.authorization!);
   
-    //   if (!req.body.title || !req.body.ingredients || !req.body.description) {
-    //     throw new Error("Invalid");
-    //   }
+       if (!req.body.photo || !req.body.description || !req.body.type) {
+         throw new Error("Invalid");
+       }
   
       const idGenerator = new IdGenerator()
       const id = idGenerator.generate()  
@@ -47,5 +43,5 @@ PostRouter.post("/create", async (req: Request, res: Response) => {
         mesage: err.message
       })
     }
-  });
+  };
   
