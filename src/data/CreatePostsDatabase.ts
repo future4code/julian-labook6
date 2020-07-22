@@ -3,11 +3,10 @@ import { BaseDatabase } from "./BaseDatabase";
 
 
 export class CreatePostDatabase extends BaseDatabase {
-   
     
     private static TABLE_NAME = "Posts";
 
-    public async createPosts(
+      public async createPosts(
       id: string,  
       photo: string,
       description: string,
