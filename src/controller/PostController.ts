@@ -20,7 +20,6 @@ export const create = async (req: Request, res: Response) => {
       const postData = {
         photo: req.body.photo,
         description: req.body.description,
-        creation_date: req.body.creation_date,
         type: req.body.type
       }
   
