@@ -1,4 +1,3 @@
-import {CreatePostDatabase } from "../data/CreatePostsDatabase";
 import express from "express";
 import { create } from "../controller/PostController";
 
