@@ -5,6 +5,7 @@ import express from "express";
 import { AddressInfo } from "net";
 import { signupRouter } from "./router/SignupRouter";
 import { loginRouter } from "./router/LoginRouter";
+import { PostRouter } from "./router/PostRouter";
 
 dotenv.config();
 
@@ -12,10 +13,9 @@ const app = express();
 app.use(express.json());
 
 app.use("/friend", friendRouter);
-
+app.use("/create", PostRouter);
 app.use('/signup', signupRouter);
 app.use('/login', loginRouter);
-
 
 const server = app.listen(process.env.PORT || 3003, () => {
   if (server) {
