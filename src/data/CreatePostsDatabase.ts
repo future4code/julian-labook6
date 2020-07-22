@@ -3,10 +3,7 @@ import { BaseDatabase } from "./BaseDatabase";
 
 
 export class CreatePostDatabase extends BaseDatabase {
-    CreatePostsDatabase(arg0: string, CreatePostsDatabase: any) {
-        throw new Error("Method not implemented.");
-    }
-    tableName!: string;
+   
     
     private static TABLE_NAME = "Posts";
 
