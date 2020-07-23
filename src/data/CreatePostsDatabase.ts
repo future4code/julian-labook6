@@ -1,4 +1,5 @@
 import { BaseDatabase } from "./BaseDatabase";
+import { Post, GetPostByTypeDTO } from "../Model/feed";
 
 
 
@@ -29,12 +30,29 @@ export class CreatePostDatabase extends BaseDatabase {
       
     }
 
-    public async getPostById(id: string): Promise<any> {
+    public async getPosts(): Promise<any> {
       const result = await this.getConnection()
         .select("*")
-        .from(CreatePostDatabase.TABLE_NAME)
-        .where({ id });
-
-        return result[0];
+        .from(CreatePostDatabase.TABLE_NAME);
+       
+        return result;
     }  
+    public async getPostById(id: string): Promise<any> {
+      const result = await this.getConnection()
+          .select("*")
+          .from(CreatePostDatabase.TABLE_NAME)
+          .where({ id });
+
+      return result[0];
+  }
+
+    public async getPostByType(postData: GetPostByTypeDTO): Promise<Post[]> {
+      const posts = await this.getConnection()
+          .select("*")
+          .from(CreatePostDatabase.TABLE_NAME)
+          .where({type: postData.type})
+          .orderBy(postData.orderBy, postData.orderType)
+
+      return posts
+  }
 }
