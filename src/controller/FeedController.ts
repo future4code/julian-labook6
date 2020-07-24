@@ -1,4 +1,4 @@
-import express, { Request, Response } from "express";
+import { Request, Response } from "express";
 import { Authenticator } from "../services/Authenticator"
 import { CreatePostDatabase } from "../data/CreatePostsDatabase"
 import { BaseDatabase } from "../data/BaseDatabase"
@@ -28,5 +28,5 @@ export const feed = async (req: Request, res: Response): Promise<any> => {
         message: err.message
       })
     }
-    await BaseDatabase.destroyConnection()
+    BaseDatabase.destroyConnection()
   }
