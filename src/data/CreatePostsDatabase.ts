@@ -1,5 +1,5 @@
 import { BaseDatabase } from "./BaseDatabase";
-import { Post, GetPostByTypeDTO } from "../Model/feed";
+import { Post, GetPostByTypeDTO } from "../model/feed";
 
 
 
