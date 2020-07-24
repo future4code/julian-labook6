@@ -1,4 +1,4 @@
-import { userRouter } from './router/UserRouter';
+import { userRouter } from "./router/UserRouter";
 import { friendRouter } from "./router/FriendRouter";
 import dotenv from "dotenv";
 import express from "express";
@@ -12,7 +12,8 @@ app.use(express.json());
 
 app.use("/friend", friendRouter);
 app.use("/create", PostRouter);
-app.use('/user', userRouter);
+app.use("/user", userRouter);
+app.use("/posts", PostRouter);
 
 const server = app.listen(process.env.PORT || 3003, () => {
   if (server) {

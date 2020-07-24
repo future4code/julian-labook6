@@ -4,7 +4,6 @@ import { Request, Response } from "express";
 import { IdGenerator } from "../services/IdGenerator";
 import { Authenticator } from "../services/Authenticator";
 import { HashManager } from "../services/HashManager";
-import { BaseDatabase } from "../data/BaseDatabase";
 
 export class UserController {
   async signup(request: Request, response: Response) {
